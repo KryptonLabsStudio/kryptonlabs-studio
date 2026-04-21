@@ -31,22 +31,23 @@
       z-index: 1;
       max-width: 860px;
       margin: 0 auto;
-      padding: 60px 24px 80px;
+      padding: 36px 20px 48px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
+      align-items: flex-start;
+      text-align: left;
     }
 
     /* ── Logo ── */
     .logo-wrap {
-      margin-bottom: 36px;
+      margin-bottom: 12px;
     }
     .logo-wrap img {
-      width: min(260px, 60vw);
+      width: min(260px, 56vw);
       height: auto;
-      filter: drop-shadow(0 0 32px rgba(120, 80, 255, 0.55))
+      filter: drop-shadow(0 0 28px rgba(120, 80, 255, 0.55))
               drop-shadow(0 0 8px rgba(160, 120, 255, 0.4));
+      animation: glowLogo 3.5s ease-in-out infinite;
     }
 
     /* ── Headline ── */
@@ -59,50 +60,184 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      background-size: 200% 200%;
+      opacity: 0;
+      animation: fadeInText 1.4s ease forwards;
+    }
+
+    .element-panel {
+      display: grid;
+      grid-template-columns: minmax(220px, 1fr) minmax(240px, 1fr);
+      gap: 18px;
+      width: 100%;
+      margin: 0 0 28px;
+      padding: 18px;
+      background: rgba(60, 40, 120, 0.08);
+      border: 1px solid rgba(140, 100, 255, 0.18);
+      border-radius: 24px;
+      align-items: center;
+    }
+
+    .element-card {
+      display: grid;
+      gap: 14px;
+    }
+
+    .element-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .element-logo {
+      width: 84px;
+      height: 84px;
+      object-fit: contain;
+      border-radius: 22px;
+      box-shadow: 0 0 18px rgba(120, 80, 255, 0.2);
+      border: none;
+      background: transparent;
+    }
+
+    .element-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #f4f2ff;
+      margin: 0;
+    }
+
+    .element-subtitle {
+      font-size: 0.95rem;
+      color: #c8b8ff;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    .element-card p {
+      margin: 0;
+      color: #c0b8ff;
+      line-height: 1.6;
+    }
+
+    .atom-display {
+      position: relative;
+      min-height: 160px;
+      display: grid;
+      place-items: center;
+    }
+
+    .nucleus {
+      width: 108px;
+      height: 108px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.18), rgba(120, 80, 255, 0.25) 55%, rgba(42, 20, 120, 0.9));
+      box-shadow: 0 0 48px rgba(120, 80, 255, 0.3);
+      display: grid;
+      place-items: center;
+      color: #f5f3ff;
+      font-size: 1rem;
+      text-align: center;
+      font-weight: 700;
+      animation: pulseNucleus 2.5s ease-in-out infinite;
+    }
+
+    .orbit {
+      position: absolute;
+      border: 1px solid rgba(150, 120, 255, 0.18);
+      border-radius: 50%;
+      animation: spin 8s linear infinite;
+    }
+
+    .orbit-1 {
+      width: 140px;
+      height: 140px;
+    }
+
+    .orbit-2 {
+      width: 170px;
+      height: 170px;
+      animation-duration: 10s;
+    }
+
+    .orbit-3 {
+      width: 190px;
+      height: 190px;
+      animation-duration: 12s;
+    }
+
+    .electron {
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      width: 12px;
+      height: 12px;
+      margin-top: -6px;
+      margin-left: -6px;
+      background: radial-gradient(circle, rgba(255,255,255,1), rgba(120, 180, 255, 0.9));
+      border-radius: 50%;
+      box-shadow: 0 0 14px rgba(120, 180, 255, 0.45);
+    }
+
+    .orbit-2 .electron {
+      left: 0;
+    }
+
+    .orbit-3 .electron {
+      top: 100%;
+      left: 50%;
+      margin-left: -6px;
+      margin-top: -6px;
+    }
+
+    @keyframes pulseNucleus {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
 
     .tagline {
-      font-size: 1.1rem;
-      line-height: 1.75;
+      font-size: 1.05rem;
+      line-height: 1.65;
       color: #a8a8c8;
       max-width: 620px;
-      margin: 0 0 48px;
+      margin: 0 0 36px;
+      opacity: 0;
+      animation: fadeInText 1.6s ease 0.2s forwards;
     }
 
-    /* ── Cards ── */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      width: 100%;
+    @keyframes fadeInText {
+      0% {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    .card {
-      background: rgba(90, 60, 180, 0.08);
-      border: 1px solid rgba(130, 90, 255, 0.25);
-      border-radius: 20px;
-      padding: 28px 24px;
-      text-align: left;
-      transition: border-color 0.25s, box-shadow 0.25s;
-    }
-    .card:hover {
-      border-color: rgba(160, 120, 255, 0.55);
-      box-shadow: 0 0 28px rgba(120, 80, 255, 0.18);
+    @keyframes glowLogo {
+      0%, 100% {
+        filter: drop-shadow(0 0 24px rgba(120, 80, 255, 0.55))
+                drop-shadow(0 0 10px rgba(160, 120, 255, 0.4));
+      }
+      50% {
+        filter: drop-shadow(0 0 48px rgba(120, 80, 255, 0.75))
+                drop-shadow(0 0 18px rgba(160, 120, 255, 0.55));
+      }
     }
 
-    .card h2 {
-      margin: 0 0 12px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #b8a0ff;
-      letter-spacing: 0.01em;
-    }
-
-    .card p {
-      margin: 0;
-      font-size: 0.97rem;
-      line-height: 1.7;
-      color: #b0b0cc;
+    @keyframes floatImage {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-4px);
+      }
     }
 
     /* ── Links ── */
@@ -135,29 +270,36 @@
 
     <h1>Krypton Labs Studio</h1>
     <p class="tagline">
-      Independent mobile game studio. Find support, privacy information,
-      and the latest updates for our apps right here.
+      A game lab where prototypes are brewed, tested, and refined into
+      playable experiments.
     </p>
 
-    <div class="cards">
-
-      <div class="card">
-        <h2>📬 Support</h2>
+    <div class="element-panel">
+      <div class="element-card">
+        <div class="element-header">
+          <img src="assets/Krypton Labs Logo.png" alt="Krypton Labs logo" class="element-logo">
+          <div>
+            <p class="element-title">Krypton Labs</p>
+            <p class="element-subtitle">Bright Ideas. Electric Execution.</p>
+          </div>
+        </div>
         <p>
-          Experiencing an issue or have a question? Reach us at
-          <a href="mailto:contact@kryptonlabs.studio">contact@kryptonlabs.studio</a>
-          and we'll get back to you as soon as possible.
+          Krypton is a noble gas — element 36 — known for its clean, electric
+          glow. When energized, it lights up with a vivid brilliance that cuts
+          through the dark.
         </p>
-      </div>
-
-      <div class="card">
-        <h2>🔒 Privacy</h2>
         <p>
-          We take your privacy seriously. Review our privacy policy for details
-          on how data is handled across all of our apps.
+          That energized glow is the heart of our studio, powering every system,
+          visual, and interaction we build.
         </p>
+        <p><strong>Krypton Labs turns raw energy into polished experiences: bright, focused, and unmistakably ours.</strong></p>
       </div>
-
+      <div class="atom-display">
+        <div class="orbit orbit-1"><div class="electron"></div></div>
+        <div class="orbit orbit-2"><div class="electron"></div></div>
+        <div class="orbit orbit-3"><div class="electron"></div></div>
+        <div class="nucleus">Kr<br><small>nucleus</small></div>
+      </div>
     </div>
 
     <footer>
