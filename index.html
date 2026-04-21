@@ -161,9 +161,10 @@
     </div>
 
     <footer>
-      &copy; <script>document.write(new Date().getFullYear())</script> Krypton Labs Studio&trade; &mdash; All rights reserved.
+      &copy; <span id="yr"></span> Krypton Labs Studio&trade; &mdash; All rights reserved.
     </footer>
 
   </div>
+  <script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
 </body>
 </html>
