@@ -39,15 +39,19 @@
     }
 
     /* ── Logo ── */
-    .logo-wrap {
-      margin-bottom: 12px;
+    .top-row {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
     }
-    .logo-wrap img {
-      width: min(260px, 56vw);
-      height: auto;
-      filter: drop-shadow(0 0 28px rgba(120, 80, 255, 0.55))
-              drop-shadow(0 0 8px rgba(160, 120, 255, 0.4));
-      animation: glowLogo 3.5s ease-in-out infinite;
+
+    .title-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
 
     /* ── Headline ── */
@@ -90,11 +94,11 @@
     }
 
     .element-logo {
-      width: 84px;
-      height: 84px;
+      width: 120px;
+      height: 120px;
       object-fit: contain;
-      border-radius: 22px;
-      box-shadow: 0 0 18px rgba(120, 80, 255, 0.2);
+      border-radius: 24px;
+      box-shadow: 0 0 20px rgba(120, 80, 255, 0.24);
       border: none;
       background: transparent;
     }
@@ -111,6 +115,7 @@
       color: #c8b8ff;
       margin-top: 4px;
       line-height: 1.4;
+      white-space: nowrap;
     }
 
     .element-card p {
@@ -261,25 +266,17 @@
 <body>
   <div class="site">
 
-    <div class="logo-wrap">
-      <img
-        src="assets/Krypton Labs Logo.png"
-        alt="Krypton Labs Logo — element Kr, atomic number 36"
-      >
+    <div class="top-row">
+      <div class="title-wrap">
+        <h1>Krypton Labs Studio</h1>
+      </div>
     </div>
-
-    <h1>Krypton Labs Studio</h1>
-    <p class="tagline">
-      A game lab where prototypes are brewed, tested, and refined into
-      playable experiments.
-    </p>
 
     <div class="element-panel">
       <div class="element-card">
         <div class="element-header">
           <img src="assets/Krypton Labs Logo.png" alt="Krypton Labs logo" class="element-logo">
           <div>
-            <p class="element-title">Krypton Labs</p>
             <p class="element-subtitle">Bright Ideas. Electric Execution.</p>
           </div>
         </div>
@@ -301,6 +298,11 @@
         <div class="nucleus">Kr<br><small>nucleus</small></div>
       </div>
     </div>
+
+    <p class="tagline">
+      A game lab where prototypes are brewed, tested, and refined into
+      playable experiments.
+    </p>
 
     <footer>
       &copy; <span id="yr"></span> Krypton Labs Studio&trade; &mdash; All rights reserved.
