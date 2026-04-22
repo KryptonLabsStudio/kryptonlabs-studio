@@ -6,6 +6,10 @@
   <title>Krypton Labs Studio</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; }
+    html, body {
+      min-width: 100%;
+      overflow-x: hidden;
+    }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -29,7 +33,7 @@
     .site {
       position: relative;
       z-index: 1;
-      max-width: 860px;
+      max-width: min(860px, 100%);
       margin: 0 auto;
       padding: 36px 20px 48px;
       display: flex;
@@ -118,7 +122,7 @@
       color: #c8b8ff;
       margin-top: 4px;
       line-height: 1.4;
-      white-space: nowrap;
+      white-space: normal;
     }
 
     .element-card p {
@@ -147,9 +151,8 @@
       margin: 0 auto;
       max-width: 100%;
       text-align: center;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      white-space: normal;
+      overflow-wrap: anywhere;
       font-size: 1.05rem;
       line-height: 1.6;
     }
@@ -202,8 +205,14 @@
       }
 
       .atom-display {
-        width: min(260px, 90vw);
-        height: min(260px, 90vw);
+        width: min(240px, 90vw);
+        height: min(240px, 90vw);
+      }
+
+      .tagline {
+        max-width: 100%;
+        margin: 0;
+        padding: 0 4px;
       }
 
       .card-footer {
@@ -443,8 +452,8 @@
       margin: 0 auto 36px;
       opacity: 0;
       animation: fadeInText 1.6s ease 0.2s forwards;
-      white-space: nowrap;
-      overflow-wrap: normal;
+      white-space: normal;
+      overflow-wrap: anywhere;
       text-align: center;
     }
 
