@@ -299,7 +299,7 @@
     .orbit-1 {
       width: 180px;
       height: 180px;
-      transform: translate(-50%, -50%) rotateY(74deg) rotateX(42deg);
+      transform: translate(-50%, -50%);
       border-color: rgba(160, 100, 255, 0.95);
       box-shadow: inset 0 0 14px rgba(160, 100, 255, 0.35), 0 0 22px rgba(140, 80, 255, 0.22);
       z-index: 4;
@@ -308,7 +308,7 @@
     .orbit-2 {
       width: 180px;
       height: 180px;
-      transform: translate(-50%, -50%) rotateX(70deg) rotateY(12deg) rotateZ(-45deg);
+      transform: translate(-50%, -50%);
       border-color: rgba(60, 220, 255, 0.95);
       box-shadow: inset 0 0 14px rgba(60, 220, 255, 0.28), 0 0 22px rgba(40, 180, 255, 0.18);
     }
@@ -316,7 +316,7 @@
     .orbit-3 {
       width: 180px;
       height: 180px;
-      transform: translate(-50%, -50%) rotateX(-65deg) rotateY(30deg) rotateZ(115deg);
+      transform: translate(-50%, -50%);
       border-color: rgba(255, 130, 210, 0.92);
       box-shadow: inset 0 0 14px rgba(255, 130, 210, 0.30), 0 0 22px rgba(230, 90, 180, 0.18);
     }
@@ -641,44 +641,45 @@
     </div>
 
     <div class="element-panel">
-      <div class="element-card">
-        <div class="element-header">
-          <img src="assets/Krypton Labs Logo.png" alt="Krypton Labs logo" class="element-logo">
-          <div>
-            <p class="element-subtitle">Bright Ideas. Electric Execution.</p>
+      <div style="display: flex; flex-direction: row; width: 100%; align-items: center; justify-content: center; gap: 32px;">
+        <div class="element-card" style="flex: 1 1 0; min-width: 240px; max-width: 50%;">
+          <div class="element-header">
+            <img src="assets/Krypton Labs Logo.png" alt="Krypton Labs logo" class="element-logo">
+            <div>
+              <p class="element-subtitle">Bright Ideas. Electric Execution.</p>
+            </div>
           </div>
+          <p>
+            Krypton is a noble gas — element 36 — known for its clean, electric
+            glow. When energized, it lights up with a vivid brilliance that cuts
+            through the dark.
+          </p>
+          <p>
+            That energized glow is the heart of our studio, powering every system,
+            visual, and interaction we build.
+          </p>
+          <p>Krypton Labs turns raw energy into polished experiences: bright, focused, and unmistakably ours.</p>
         </div>
-        <p>
-          Krypton is a noble gas — element 36 — known for its clean, electric
-          glow. When energized, it lights up with a vivid brilliance that cuts
-          through the dark.
-        </p>
-        <p>
-          That energized glow is the heart of our studio, powering every system,
-          visual, and interaction we build.
-        </p>
-        <p>Krypton Labs turns raw energy into polished experiences: bright, focused, and unmistakably ours.</p>
-      </div>
-      <div class="atom-display">
-        <div class="orbit orbit-1"><div class="orbit-spin"><div class="electron"></div></div></div>
-        <div class="orbit orbit-2"><div class="orbit-spin"><div class="electron"></div></div></div>
-        <div class="orbit orbit-3"><div class="orbit-spin"><div class="electron"></div></div></div>
-        <div class="nucleus">
-          <div class="nucleus-core">
-            <span class="proton"></span>
-            <span class="neutron"></span>
-            <span class="proton"></span>
-            <span class="neutron"></span>
-            <span class="proton"></span>
-            <span class="neutron"></span>
-            <span class="proton"></span>
-            <span class="neutron"></span>
-            <span class="proton"></span>
-            <span class="neutron"></span>
-            <span class="proton"></span>
-            <span class="neutron"></span>
+        <div class="atom-display" style="flex: 1 1 0; min-width: 220px; max-width: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+          <div class="orbit orbit-1"><div class="orbit-spin"><div class="electron"></div></div></div>
+          <div class="orbit orbit-2"><div class="orbit-spin"><div class="electron"></div></div></div>
+          <div class="orbit orbit-3"><div class="orbit-spin"><div class="electron"></div></div></div>
+          <div class="nucleus">
+            <div class="nucleus-core">
+              <span class="proton"></span>
+              <span class="neutron"></span>
+              <span class="proton"></span>
+              <span class="neutron"></span>
+              <span class="proton"></span>
+              <span class="neutron"></span>
+              <span class="proton"></span>
+              <span class="neutron"></span>
+              <span class="proton"></span>
+              <span class="neutron"></span>
+              <span class="proton"></span>
+              <span class="neutron"></span>
+            </div>
           </div>
-        </div>
       </div>
       <div class="card-footer">
         <p class="tagline">A game lab where prototypes are brewed, tested, and refined into playable experiments.</p>
@@ -689,6 +690,12 @@
       &copy; <span id="yr"></span> Krypton Labs Studio&trade; &mdash; All rights reserved.
     </footer>
 
+  </div>
+  <!-- Embedded Google Drive Video -->
+  <div style="width:100%;display:flex;justify-content:center;margin:32px 0 0 0;">
+    <div style="max-width: 620px; width: 100%; background: rgba(40,28,90,0.95); border: 1px solid rgba(190,150,255,0.5); border-radius: 28px; box-shadow: 0 24px 80px rgba(20,15,60,0.35); padding: 24px 12px; display: flex; flex-direction: column; align-items: center;">
+      <iframe src="https://drive.google.com/file/d/16O_oCuqTD5l62VJDg6wF_7TkH2wYtsiP/preview" allow="autoplay" style="width:100%; aspect-ratio:16/9; min-height:200px; max-width:100%; border:none; border-radius: 16px;"></iframe>
+    </div>
   </div>
   <script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
 </body>
