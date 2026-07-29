@@ -346,10 +346,8 @@
     .apple-mark { font-size: 1.55rem; line-height: 1; }
     .store-label { display: grid; line-height: 1.05; }
     .store-label small { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; }
-    .media-grid { display: grid; grid-template-columns: 1.1fr 1.9fr; gap: 22px; margin-top: 34px; align-items: start; }
-    .app-preview { width: 100%; max-height: 620px; aspect-ratio: 886 / 1920; object-fit: cover; border-radius: 24px; background: #070715; box-shadow: 0 18px 48px rgba(0,0,0,0.4); }
-    .screenshots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-    .screenshots img { display: block; width: 100%; border-radius: 18px; box-shadow: 0 14px 34px rgba(0,0,0,0.34); }
+    .start-screen { display: block; width: min(100%, 360px); margin: 34px auto 0; }
+    .start-screen img { display: block; width: 100%; border-radius: 24px; box-shadow: 0 18px 48px rgba(0,0,0,0.4); }
     .media-caption { margin: 14px 0 0; color: #8f93bb; font-size: 0.78rem; text-align: center; }
 
     .manifesto {
@@ -481,10 +479,8 @@
       .app-showcase { margin-top: 42px; padding: 26px 20px; }
       .app-intro { grid-template-columns: 76px 1fr; gap: 15px; }
       .app-icon { width: 76px; height: 76px; border-radius: 18px; }
-      .media-grid { grid-template-columns: 1fr; }
-      .app-preview { max-width: 300px; margin: 0 auto; }
-      .screenshots { gap: 7px; }
-      .screenshots img { border-radius: 11px; }
+      .start-screen { width: min(100%, 300px); }
+      .start-screen img { border-radius: 18px; }
 
       footer {
         align-items: flex-start;
@@ -563,20 +559,10 @@
         <span class="apple-mark" aria-hidden="true">&#63743;</span>
         <span class="store-label"><small>Download on the</small><strong>App Store</strong></span>
       </a>
-      <div class="media-grid">
-        <video class="app-preview" controls playsinline preload="metadata" poster="assets/tic-tac-flow/video-poster.webp" aria-label="Tic Tac Flow XO App Preview">
-          <source src="assets/tic-tac-flow/preview-video.mp4" type="video/mp4">
-          Your browser does not support embedded video.
-        </video>
-        <div>
-          <div class="screenshots">
-            <a href="https://apps.apple.com/us/app/tic-tac-flow-xo/id6762038354"><img src="assets/tic-tac-flow/screenshot-1.webp" alt="Tic Tac Flow XO gameplay screenshot" loading="lazy"></a>
-            <a href="https://apps.apple.com/us/app/tic-tac-flow-xo/id6762038354"><img src="assets/tic-tac-flow/screenshot-2.webp" alt="Tic Tac Flow XO game board screenshot" loading="lazy"></a>
-            <a href="https://apps.apple.com/us/app/tic-tac-flow-xo/id6762038354"><img src="assets/tic-tac-flow/screenshot-3.webp" alt="Tic Tac Flow XO settings screenshot" loading="lazy"></a>
-          </div>
-          <p class="media-caption">Official App Store screenshots and preview.</p>
-        </div>
-      </div>
+      <a class="start-screen" href="https://apps.apple.com/us/app/tic-tac-flow-xo/id6762038354" aria-label="View Tic Tac Flow XO on the App Store">
+        <img src="assets/tic-tac-flow/screenshot-1.webp" alt="Tic Tac Flow XO start screen" loading="lazy">
+      </a>
+      <p class="media-caption">Tic Tac Flow XO start screen.</p>
     </section>
   </main>
 
