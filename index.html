@@ -350,6 +350,31 @@
     .start-screen img { display: block; width: 100%; border-radius: 24px; box-shadow: 0 18px 48px rgba(0,0,0,0.4); }
     .media-caption { margin: 14px 0 0; color: #8f93bb; font-size: 0.78rem; text-align: center; }
 
+    .cafe-showcase {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 380px);
+      gap: clamp(30px, 6vw, 72px);
+      align-items: center;
+      margin-top: 28px;
+      padding: clamp(28px, 5vw, 52px);
+      overflow: hidden;
+      border: 1px solid rgba(255, 184, 89, 0.3);
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 82% 22%, rgba(255, 179, 74, 0.18), transparent 21rem),
+        linear-gradient(145deg, rgba(49, 28, 19, 0.97), rgba(28, 20, 25, 0.96));
+      box-shadow: 0 28px 90px rgba(0, 0, 0, 0.28);
+    }
+
+    .cafe-heading { display: flex; align-items: center; gap: 18px; }
+    .cafe-icon { width: 88px; height: 88px; border-radius: 22px; box-shadow: 0 16px 36px rgba(0,0,0,0.35); }
+    .coming-soon { margin: 0 0 7px; color: #ffc269; font-size: 0.76rem; font-weight: 760; letter-spacing: 0.14em; text-transform: uppercase; }
+    .cafe-showcase h2 { margin: 0; font-size: clamp(2rem, 4.8vw, 3.5rem); line-height: 1; letter-spacing: -0.05em; }
+    .cafe-copy { margin: 26px 0 0; color: #ddd0c8; font-size: 1.06rem; line-height: 1.72; }
+    .cafe-features { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 24px; }
+    .cafe-features span { padding: 8px 12px; border: 1px solid rgba(255,194,105,0.24); border-radius: 999px; color: #f5d7ae; background: rgba(255,194,105,0.08); font-size: 0.78rem; }
+    .cafe-art { display: block; width: 100%; max-height: 620px; object-fit: cover; object-position: top; border-radius: 24px; box-shadow: 0 20px 54px rgba(0,0,0,0.42); }
+
     .manifesto {
       display: grid;
       grid-template-columns: 0.85fr 1.15fr;
@@ -481,6 +506,10 @@
       .app-icon { width: 76px; height: 76px; border-radius: 18px; }
       .start-screen { width: min(100%, 300px); }
       .start-screen img { border-radius: 18px; }
+      .cafe-showcase { grid-template-columns: 1fr; padding: 26px 20px; }
+      .cafe-heading { gap: 14px; }
+      .cafe-icon { width: 72px; height: 72px; border-radius: 18px; }
+      .cafe-art { max-height: none; }
 
       footer {
         align-items: flex-start;
@@ -563,6 +592,26 @@
         <img src="assets/tic-tac-flow/screenshot-1.webp" alt="Tic Tac Flow XO start screen" loading="lazy">
       </a>
       <p class="media-caption">Tic Tac Flow XO start screen.</p>
+    </section>
+
+    <section class="cafe-showcase" aria-labelledby="cafe-fox-title">
+      <div>
+        <div class="cafe-heading">
+          <img class="cafe-icon" src="assets/cafe-fox/icon.png" alt="Fox Cup Café app icon">
+          <div>
+            <p class="coming-soon">Coming soon to the App Store</p>
+            <h2 id="cafe-fox-title">Fox Cup Café</h2>
+          </div>
+        </div>
+        <p class="cafe-copy">Step behind the counter of a cozy café where every order has personality. Prepare handcrafted drinks and pastries, build your recipe-card collection, and watch your expressive fox barista react to every success, surprise, and slip-up.</p>
+        <div class="cafe-features" aria-label="Fox Cup Café features">
+          <span>Cozy café gameplay</span>
+          <span>Drinks &amp; pastries</span>
+          <span>Collectible recipe cards</span>
+          <span>Expressive fox companion</span>
+        </div>
+      </div>
+      <img class="cafe-art" src="assets/cafe-fox/start-screen.jpg" alt="Fox Cup Café start screen with the fox barista" loading="lazy">
     </section>
   </main>
 
